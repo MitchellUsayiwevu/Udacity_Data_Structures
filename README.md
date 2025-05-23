@@ -1,4 +1,4 @@
-This folder contains exercises on Data Structures from the Udacity C++ Data Structures Course \
+This repo contains exercises on Data Structures from the Udacity C++ Data Structures Course \
 Topics included are: 
 - Arrays,
 - std::vectors,
