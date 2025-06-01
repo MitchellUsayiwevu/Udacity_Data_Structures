@@ -126,13 +126,21 @@ public:
 
             if(*(current->data)==value){
 
-                if (current->data = head->data){
+                if (current->data == head->data){ /// CHECK IF CURRENT NODE IS HEAD NODE
                     head = current->next;
+                }
+//                if (previous == nullptr){
+//                    head = current->next;
+//                }
+                else{
+                    previous->next = current->next;  /// bypass the current node
                 }
                 delete current;
                 --size;
+                return;
             }
             else{
+                previous = current;
                 current  = current->next;
             }
 
