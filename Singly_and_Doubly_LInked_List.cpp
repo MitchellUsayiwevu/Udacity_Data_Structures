@@ -49,7 +49,15 @@ public:
     void insertToTail(T* value) {
         // TODO: Study the insertToHead code and implement the
         // insertToTail accordingly
-
+        DoubleNode<T>* newNode =  new DoubleNode<T>(value);
+        if(tail == nullptr){
+            tail  = head = newNode;
+        } else{
+             newNode->prev = tail;
+             tail->next = newNode;
+             tail=newNode;
+        }
+        ++size;
     }
 
     // Remove and return the payload (data) of the node at the head
@@ -72,10 +80,23 @@ public:
     T* removeFromTail() {
         // TODO: Study the removeFromHead code and implement the
         // removeFromTail accordingly
+        if(tail == nullptr){  // the list is empty
+            return nullptr;
+        }
 
+        DoubleNode<T>* temp = tail;
+        T* value = temp->data;
+        if(temp->prev == nullptr){  //one element on the list
+            head = nullptr;
+            tail = nullptr;
+        } else{                     /// list has more than one lement
+            tail=tail->prev;
+            tail->next = nullptr;
+        }
+        delete temp;
+        --size;
+        return value;
 
-        // replace this accordingly
-        return nullptr;
     }
 
     // Print all nodes in the list
