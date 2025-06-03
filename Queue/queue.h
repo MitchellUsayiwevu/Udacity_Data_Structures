@@ -26,7 +26,7 @@ public:
     void enqueue(T* value) override {
         // TODO: Implement the enqueue method using
         // the appropriate linked list method
-
+        list.insertAtTail(value);
     }
 
     T* dequeue() override {
@@ -34,7 +34,7 @@ public:
         // the appropriate linked list method
 
         // replace this return with the actual implementation
-        return nullptr;
+        return list.removeFromHead();
     }
 
     T* peek() const override {
@@ -42,7 +42,7 @@ public:
         // the appropriate linked list method
 
         // replace this return with the actual implementation
-        return nullptr;
+        return list.peekHead();
     }
 
     bool isEmpty() const override {
@@ -50,7 +50,7 @@ public:
         // the appropriate linked list method
 
         // replace this return with the actual implementation
-        return true;
+        return list.isEmpty();
     }
 };
 

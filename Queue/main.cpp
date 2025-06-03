@@ -17,6 +17,7 @@ int main() {
     // Enqueue elements into the queue
     queue.enqueue(new int(10));
     queue.enqueue(new int(20));
+    queue.enqueue(new int(30));
 
     // Peek at the front element
     auto frontElement = queue.peek();
@@ -46,6 +47,22 @@ int main() {
     } else {
         std::cout << "Queue is empty. No front element." << std::endl;
     }
+
+    dequeued = queue.dequeue();
+    if (dequeued != nullptr) {
+        std::cout << "Dequeued element: " << *dequeued << std::endl;
+        delete dequeued;  // Manually delete the dequeued element to free memory
+    } else {
+        std::cout << "No element to dequeue. Queue might be empty." << std::endl;
+    }
+
+    newFront = queue.peek();
+    if (newFront != nullptr) {
+        std::cout << "Queue Front after dequeue: " << *newFront << std::endl;
+    } else {
+        std::cout << "Queue is empty. No front element." << std::endl;
+    }
+
 
     return 0;
 }
